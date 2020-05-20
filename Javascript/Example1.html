@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	</head>
+	<body>
+		<script>
+			var tasks = [
+			{
+				'name': 'Write for Envato Tuts+',
+				'durationInMin' : 120
+			},
+			{
+				'name': 'Work out',
+				'durationInMin' : 60
+			},
+			{
+				'name': 'Procrastinate on Duolingo',
+				'durationInMin' : 240
+			}];
+			var initial_tasks_list = JSON.stringify(tasks, null, 4)
+			var task_names = tasks.map((task) => task.name);
+			var difficult_tasks = tasks.filter((task) => task.durationInMin >= 120)
+			
+			document.write("INITIAL TASKS: " + initial_tasks_list + "<br/>");
+			document.write("MAP TASKS NAMES: " + task_names + "<br/>");
+			document.write("MAP TASKS NAMES DURATION >= 120: " + JSON.stringify(difficult_tasks, null, 4) + "<br/>");			
+			
+			var numbers = [1, 2, 3, 4, 5];
+			var total = numbers.reduce((previous, current) => previous + current);
+			document.write("<br/>");
+			document.write("INITIAL TASKS: " + numbers + "<br/>");
+			document.write("REDUCE TOTAL: " + total.toString() + "<br/>");
+			
+			var pets = ['dog', 'chicken', 'cat', 'dog', 'chicken', 'chicken', 'rabbit'];
+			var petCounts = pets.reduce(function(obj, pet){
+											if (!obj[pet]) {
+												obj[pet] = 1;
+											} else {
+												obj[pet]++;
+											}
+											return obj;
+										}, {});
+			document.write("<br/>");
+			document.write("INITIAL LIST: " + pets + "<br/>");
+			document.write("REDUCE GROUPING: " + JSON.stringify(petCounts, null, 4) + "<br/>");
+			console.log(petCounts);
+		</script>
+	</body>
+</html>
